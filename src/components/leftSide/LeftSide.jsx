@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { Twitter, AccessibilityNewOutlined, Home, Sms, NoteAltOutlined, FlashOn, Settings, HelpOutlineOutlined, DomainVerification, Equalizer, RocketLaunch, Tag, Notifications, Mail, Bookmark, Image, Article, PersonOutline, PendingRounded, MoreHoriz  } from '@mui/icons-material'
-import { Avatar, Box, Button, Divider, List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, MenuList } from '@mui/material'
+import { Avatar, Box, Button, Divider, List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, MenuItem, MenuList } from '@mui/material'
 import React, { useState } from 'react'
 
 
@@ -32,8 +32,6 @@ const LeftSide = () => {
 
 
      const [open, setOpen] = useState(false)
-
-     console.log('open', open)
 
   return (
     <Box flex={1.5}>

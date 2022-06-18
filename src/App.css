@@ -24,3 +24,30 @@
     background-color: #fff;
     color:#000
 }
+
+/********RIGHT SIDE*******/
+
+.tendancesContent{
+    border-radius: 20px;
+    background: rgb(241, 239, 239);
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.tendancesItem{
+    padding: 8px;
+    width: 100%;
+}
+.tendancesItem:hover{
+    background-color: #ccc;
+    width: 100%;
+    cursor: pointer;
+}
+
+.MoreIconItem:hover{
+    z-index: 5;
+    border-radius: 35px;
+    background: #30c4f1ef;
+    padding: 3px;
+    color: #fff;
+}
