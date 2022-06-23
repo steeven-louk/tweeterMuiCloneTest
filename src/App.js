@@ -1,14 +1,19 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Feed from './components/feed/Feed';
-import LeftSide from './components/leftSide/LeftSide';
-import RightSide from './components/rightSide/RightSide';
+import Home from './pages/Home';
+import Register from './pages/Register';
+
+
 
 function App() {
   return (
-    <div className="App d-flex ">
-        <LeftSide />
-        <Feed />
-        <RightSide />
+    <div className="App">
+      <Routes>
+        <Route path='/' exact element={<Register/>} />
+        <Route path='/home' element={<Home />} />
+          
+      </Routes>
+        
     </div>
   );
 }

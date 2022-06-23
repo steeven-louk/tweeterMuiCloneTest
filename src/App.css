@@ -51,3 +51,24 @@
     padding: 3px;
     color: #fff;
 }
+
+
+
+/*******LOGIN PAGE********/
+
+.iconRegister{
+    color: #ff0000;
+}
+
+
+.register_Container{
+    background: #ff0000;
+background: linear-gradient(287deg,#ff0000 0%, #000000 60%);
+background: -webkit-linear-gradient(287deg,#ff0000 0%, #000000 60%);
+background: -moz-linear-gradient(287deg,#ff0000 0%, #000000 60%);
+
+}
+
+.componentBox{
+    height: 100vh;
+  }

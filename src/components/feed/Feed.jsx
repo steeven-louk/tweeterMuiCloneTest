@@ -32,7 +32,7 @@ const Feed = () => {
   const [tweet, setTweet] = useState([]);
   const [imgPost, setImgPost] = useState();
   const [gifPost, setGifPost] = useState();
-
+ 
   
   /*const [selectedFile, setSelectedFile] = useState();
    const [isSelected, setIsSelected] = useState(false);*/
