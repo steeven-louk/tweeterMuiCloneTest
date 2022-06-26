@@ -21,16 +21,15 @@ const SearchBox = styled('div')({
   padding:"10px",
   background:"#fff",
   boxShadow: "2px 1px 2px #ccc",
-  width: "100%"
+  width: "100%",
+  zIndex:25
 })
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: "2px",
- // paddingRight:"9px",
   height: '100%',
   position: 'absolute',
   pointerEvents: 'none',
- // display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
 }));
@@ -38,7 +37,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 const RightSide = () => {
   return (
-    <Box flex={2} borderLeft="1px solid grey" height="100vh" >
+    <Box flex={2} sx={{ height:'100vh' }}>
     
       <Box >
           <SearchBox>

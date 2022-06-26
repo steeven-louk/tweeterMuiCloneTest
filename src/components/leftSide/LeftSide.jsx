@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { Twitter, AccessibilityNewOutlined, Home, Sms, NoteAltOutlined, FlashOn, Settings, HelpOutlineOutlined, DomainVerification, Equalizer, RocketLaunch, Tag, Notifications, Mail, Bookmark, Image, Article, PersonOutline, PendingRounded, MoreHoriz  } from '@mui/icons-material'
 import { Avatar, Box, Button, Divider, List, ListItem, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, MenuItem, MenuList } from '@mui/material'
 import React, { useState } from 'react'
-
+import {Link} from 'react-router-dom'
 
 const TweetButton = styled(Button)(
    {
@@ -30,8 +30,12 @@ const MenuListStyle = styled(MenuList)({
 
 const LeftSide = () => {
 
+  //recuperation du nom depuis le localStorage
+  const data = JSON.parse(localStorage.getItem('profile'));
+  const username = data[0].username;
+ 
 
-     const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false)
 
   return (
     <Box flex={1.5}>
@@ -140,7 +144,7 @@ const LeftSide = () => {
                 <ListItemIcon>
                   <PersonOutline />
                 </ListItemIcon>
-                <ListItemText primary="Profil" />
+                <Link to={`/profile/${username}`}> <ListItemText primary="Profil" /> </Link>
               </ListItemButton>
             </ListItem>
 
@@ -249,9 +253,8 @@ const LeftSide = () => {
                   <Image />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary="john doe" secondary="@johnDoe" />
+              <ListItemText primary={username} secondary={`@ ${username}`} />
             </ListItem>
-
             <MoreHoriz />
           </Box>
         </nav>

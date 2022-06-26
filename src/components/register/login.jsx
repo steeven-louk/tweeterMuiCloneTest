@@ -97,9 +97,9 @@ const Login = () => {
 
         <Box variant='div'>
           <LoginBtn type='submit'>Login</LoginBtn>
-          <span>forget password ?</span>
         </Box>
       </form>
+      <span>forget password ?</span> <br />
 
       {alertStatus && <Alert severity="error" sx={{ background:'green', color:'white' }}>{errorMsg}</Alert>}
     </Box>

@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { LockOutlined, PersonOutlineOutlined } from '@mui/icons-material'
 import { Box, Button, FormControl, InputAdornment, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Login from './login'
 
 
@@ -26,47 +27,37 @@ const SignIn = () => {
     const [email, setEmail] = useState('');
     const [userPassword, setPassword] = useState('');
     const [profile, setAddprofile] = useState([]);
-  const [isRegister, setIsRegister] = useState(false);
+    
 
-    const Submit = (e) =>{
+    const Submit = async(e) =>{
         e.preventDefault();
 
         try {
-         setAddprofile([...profile, {
+         await setAddprofile([...profile, {
             username: userName,
             email: email,
             password: userPassword,
+            
           }]);
 
-          if(profile === []) {
-             setIsRegister(false)
-          } else{
-            localStorage.setItem('profile',JSON.stringify(profile) );
 
-           
-            setIsRegister(!isRegister);
-          }
-          
+            localStorage.setItem('profile',JSON.stringify(profile) );
           
          
-          
-          console.log('====================================');
-          console.log(profile);
-          console.log('====================================');
-         // alert('register')
         } catch (error) {
           console.log("error", error);
         }
         
-
+        console.log('profile', profile)
     }
-    console.log(isRegister);
+    //console.log(isRegister);
 
 
   return (
     <>
-  {isRegister === false? (
-            <Box variant='div' mt='15em' className='text-white'>
+    
+ 
+    <Box variant='div' mt='15em' className='text-white'>
       <Typography variant='h6'>SignIn to your account</Typography>
 
       <form onSubmit={Submit} pt='15px'>
@@ -132,11 +123,13 @@ const SignIn = () => {
 
         <Box variant='div'>
           <SignInBtn type='submit'>SignIn</SignInBtn>
-          <span>forget password ?</span>
         </Box>
       </form>
+
+      <Link to={<Login/>}> <span>Login</span></Link><br />
+      <span>forget password ?</span>
     </Box>
-    ): (<Login/>)}
+
     </>
     ) 
 
